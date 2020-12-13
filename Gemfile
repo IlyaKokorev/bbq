@@ -15,7 +15,7 @@ gem 'devise'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 
-group :producion do
+group :production do
   gem 'pg'
 end
 
