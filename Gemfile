@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'uglifier', '~> 4.2'
 gem 'jquery-rails'
 gem 'twitter-bootstrap-rails'
+gem 'devise'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 
