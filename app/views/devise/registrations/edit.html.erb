@@ -1,4 +1,4 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2><%= t('pages.users.edit_password') %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -13,11 +13,11 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.label :password %> <i>(<%= t('activerecord.attributes.user.new_password')%>)</i><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
     <% if @minimum_password_length %>
       <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+      <em><%= @minimum_password_length %> <%= t('activerecord.attributes.user.password_warning') %></em>
     <% end %>
   </div>
 
@@ -27,17 +27,17 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.label :current_password %><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Update", class: "btn btn-success" %>
+    <%= f.submit t('global.form.save'), class: "btn btn-success" %>
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<h3 class="buffer-top"><%= t('pages.users.delete') %></h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-warning"%></p>
+<p><%= button_to t('pages.users.confirmation_delete'), registration_path(resource_name), data: { confirm: t('global.confirm.account') }, method: :delete, class: "btn btn-warning"%></p>
 
-<%= link_to "Back", :back %>
+<%= link_to t('global.form.back'), :back %>
