@@ -39,12 +39,20 @@ ru:
       warning: "При нажатии на 'Да' вы не сможете вернуть обратно данное событие"
       yes: 'Да'
       no: 'Отмена'
+    form:
+      save: 'Сохранить'
+      back: 'вернуться'
 
   pages:
     events:
       button:
         edit: 'Изменить'
         delete: 'Удалить'
+      title:
+        eddit: 'Редактирование события'
+        head: 'События'
+        create_events: 'Создать событие'
+        new: 'Новое событие'
     layout:
       button:
         sign_in: 'Войти'
@@ -55,4 +63,11 @@ ru:
       static:
         app_name: 'Шашлыки'
         author: 'goodprogrammer.ru'
+    users:
+      edit_profile: 'Редактирование профиля'
+      save_edit: 'Редактировать профиль'
+      edit_password: 'Сменить пароль'
+      attention: 'Пользователь пока не организовал ни одного события'
+      user_events: 'Организовал:'
+
 
