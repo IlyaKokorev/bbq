@@ -87,9 +87,15 @@ ru:
   comments:
     comment:
       destroy_confirm: 'Вы уверены, что хотите удалить этот комментарий?'
+      form: 'Оставить комментарий'
+      name: 'Имя'
+
 
   subscriptions:
     subscription:
       destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
 
-
+  events:
+    show: 'Пойдут:'
+    iready: 'Я пойду:'
+    organizer: 'Организовал:'
