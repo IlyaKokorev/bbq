@@ -13,10 +13,12 @@ ru:
         name: 'Имя'
         password: 'Пароль'
         password_confirmation: 'Подтверждение пароля'
-        new_password: 'ваш новый пароль'
+        new_password: 'Ваш новый пароль'
         password_warning: 'символов минимум'
         password_lost: 'Забыли свой пароль?'
+        password_change: 'Изменить пароль'
         instructions: 'Выслать инструкции по восстановлению пароля'
+        edit_password: 'Изменить пароль'
       event:
         title: 'Название'
         address: 'Место проведения'
