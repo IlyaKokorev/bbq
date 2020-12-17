@@ -1,4 +1,7 @@
-<div class="container">
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="container">
   <div class="row justify-content-md-center">
     <div class=".col-md-6">
       <div class="card">
@@ -7,47 +10,40 @@
         </div>
 
         <div class="card-body">
-          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-            <%= render "devise/shared/error_messages", resource: resource %>
+          <div class="form-group">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, class: 'form-control'%>
+          </div>
 
-            <div class="form-group">
-              <%= f.label :email %><br />
-              <%= f.email_field :email, autofocus: true, class: 'form-control'%>
-            </div>
-
-            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-              <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+          <div class="form-group">
+            <%= f.label :password %> <i>(<%= t('activerecord.attributes.user.new_password')%>)</i><br />
+            <%= f.password_field :password, class: 'form-control'%>
+            <% if @minimum_password_length %>
+              <br />
+              <em><%= @minimum_password_length %> <%= t('activerecord.attributes.user.password_warning') %></em>
             <% end %>
+          </div>
 
-            <div class="form-group">
-              <%= f.label :password %> <i>(<%= t('activerecord.attributes.user.new_password')%>)</i><br />
-              <%= f.password_field :password, class: 'form-control'%>
-              <% if @minimum_password_length %>
-                <br />
-                <em><%= @minimum_password_length %> <%= t('activerecord.attributes.user.password_warning') %></em>
-              <% end %>
-            </div>
+          <div class="form-group">
+            <%= f.label :password_confirmation %><br />
+            <%= f.password_field :password_confirmation, class: 'form-control'%>
+          </div>
 
-            <div class="form-group">
-              <%= f.label :password_confirmation %><br />
-              <%= f.password_field :password_confirmation, class: 'form-control'%>
-            </div>
+          <div class="form-group">
+            <%= f.label :current_password %><br />
+            <%= f.password_field :current_password, class: 'form-control' %>
+          </div>
 
-            <div class="form-group">
-              <%= f.label :current_password %><br />
-              <%= f.password_field :current_password, class: 'form-control' %>
-            </div>
+          <div class="actions">
+            <%= f.submit t('global.form.save'), class: "btn btn-success btn-block" %>
+          </div>
+        <% end %>
 
-            <div class="actions">
-              <%= f.submit t('global.form.save'), class: "btn btn-success btn-block" %>
-            </div>
-          <% end %>
+        <h3 class="buffer-top"><%= t('pages.users.delete') %></h3>
 
-          <h3 class="buffer-top"><%= t('pages.users.delete') %></h3>
+        <p><%= button_to t('pages.users.confirmation_delete'), registration_path(resource_name), data: { confirm: t('global.confirm.account') }, method: :delete, class: "btn btn-warning btn-block"%></p>
 
-          <p><%= button_to t('pages.users.confirmation_delete'), registration_path(resource_name), data: { confirm: t('global.confirm.account') }, method: :delete, class: "btn btn-warning btn-block"%></p>
-
-          <%= link_to t('global.form.back'), :back %>
+        <%= link_to t('global.form.back'), :back %>
         </div>
       </div>
     </div>

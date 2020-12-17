@@ -19,6 +19,7 @@ ru:
         password_change: 'Изменить пароль'
         instructions: 'Выслать инструкции по восстановлению пароля'
         edit_password: 'Изменить пароль'
+        waiting_confirm: 'Ожидание подверждения:'
       event:
         title: 'Название'
         address: 'Место проведения'
