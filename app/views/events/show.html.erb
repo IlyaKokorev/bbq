@@ -45,17 +45,20 @@
         <h4><%=t('events.organizer')%></h4>
         <p><%= render partial: 'users/user', object: @event.user %></p>
       </div>
-      <div class="event-subscriptions">
-        <h4><%=t('events.show')%></h4>
-        <div>
-          <p>
-            <%= render partial: 'subscriptions/subscription',
-                       collection: @event.subscriptions.except(@new_subscription) %>
-          </p>
-        </div>
-      </div>
 
-      <% unless @event.user == current_user %>
+      <% if @event.subscriptions.empty? %>
+        <div class="event-subscriptions">
+          <h4><%=t('events.show')%></h4>
+          <div>
+            <p>
+              <%= render partial: 'subscriptions/subscription',
+                         collection: @event.subscriptions.except(@new_subscription) %>
+            </p>
+          </div>
+        </div>
+      <% end %>
+
+      <% if @event.user.id != current_user.id  %>
         <div class="event-subscription-form">
           <h4><%=t('events.iready')%></h4>
           <div>

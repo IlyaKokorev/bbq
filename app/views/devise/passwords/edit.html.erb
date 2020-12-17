@@ -16,12 +16,12 @@
               <% if @minimum_password_length %>
                 <em>(<%= @minimum_password_length %> <%= t('activerecord.attributes.user.password_warning') %>)</em><br />
               <% end %>
-              <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
+              <%= f.password_field :password, autofocus: true, class: 'form-control'%>
             </div>
 
             <div class="field">
               <%= f.label :password_confirmation, t('activerecord.attributes.user.password_confirmation') %><br />
-              <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+              <%= f.password_field :password_confirmation, class: 'form-control' %>
             </div>
 
             <div class="actions">
