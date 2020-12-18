@@ -18,6 +18,14 @@ class Subscription < ApplicationRecord
 
   validate :check_email_for_subs
 
+  validate :subscribers_is_author?
+
+  def subscribers_is_author?
+    if event.user_id == user&.id
+      errors.add(:user, 'Полегче, ты и так организатор этой вечеринки! ^_^')
+    end
+  end
+
   # Если есть юзер, выдаем его имя,
   # если нет – дергаем исходный метод
   def user_name
@@ -39,7 +47,6 @@ class Subscription < ApplicationRecord
   end
 
   def check_email_for_subs
-    #if user_id.nil? && user_email.presence && User.find_by_email(user_email).presence
     if user_id.nil? && user_email.presence && User.find_by(email: user_email).presence
       errors.add(:email, 'извините, но данный email уже занят')
     end
