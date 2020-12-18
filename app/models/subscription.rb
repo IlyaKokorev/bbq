@@ -22,7 +22,7 @@ class Subscription < ApplicationRecord
 
   def subscribers_is_author?
     if event.user_id == user&.id
-      errors.add(:user, 'Полегче, ты и так организатор этой вечеринки! ^_^')
+      errors.add(:user, I18n.t('pages.users.sub_error'))
     end
   end
 
@@ -48,7 +48,7 @@ class Subscription < ApplicationRecord
 
   def check_email_for_subs
     if user_id.nil? && user_email.presence && User.find_by(email: user_email).presence
-      errors.add(:email, 'извините, но данный email уже занят')
+      errors.add(:email, I18n.t('pages.users.email_present'))
     end
   end
 end
