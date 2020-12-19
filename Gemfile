@@ -15,7 +15,7 @@ gem 'byebug'
 gem 'bootsnap', require: false
 gem 'carrierwave'
 gem 'rmagick'
-
+gem 'fog-aws'
 
 group :production do
   gem 'pg'
