@@ -5,15 +5,17 @@ ruby '2.7.0'
 
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 gem 'puma', '~> 4.1'
-gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 4.0'
-gem 'jbuilder', '~> 2.7'
 gem 'uglifier', '~> 4.2'
-gem 'jquery-rails'
-gem 'twitter-bootstrap-rails'
-gem 'devise'
 
-gem 'bootsnap', '>= 1.4.2', require: false
+gem 'devise'
+gem 'devise-i18n'
+gem 'russian'
+gem 'byebug'
+gem 'bootsnap', require: false
+gem 'carrierwave'
+gem 'rmagick'
+gem 'fog-aws'
 
 group :production do
   gem 'pg'

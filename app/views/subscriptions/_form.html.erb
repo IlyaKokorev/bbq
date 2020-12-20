@@ -1,0 +1,17 @@
+<%= form_for [@event, subscription] do |f| %>
+  <%= render partial: 'partials/form_errors', locals: {model: subscription} %>
+
+  <% unless user_signed_in? %>
+    <div class="form-group">
+      <%= f.text_field :user_name, class: 'form-control', placeholder: t('comments.comment.name') %>
+    </div>
+
+    <div class="form-group">
+      <%= f.text_field :user_email, class: 'form-control', placeholder: t('activerecord.attributes.user.email') %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit 'Подписаться', class: 'btn btn-primary' %>
+  </div>
+<% end %>

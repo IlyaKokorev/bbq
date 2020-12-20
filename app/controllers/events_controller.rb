@@ -1,13 +1,16 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
-  before_action :set_event, only: [:show]
   before_action :set_current_user_event, only: [:edit, :update, :destroy]
+  before_action :set_event, only: [:show]
 
   def index
     @events = Event.all
   end
 
   def show
+    @new_comment = @event.comments.build(params[:comment])
+    @new_subscription = @event.subscriptions.build(params[:subscription])
+    @new_photo = @event.photo.build(params[:photo])
   end
 
   def new
@@ -21,7 +24,7 @@ class EventsController < ApplicationController
     @event = current_user.events.build(event_params)
 
     if @event.save
-      redirect_to @event, notice: 'Event was successfully created.'
+      redirect_to @event, notice: I18n.t('controllers.events.created')
     else
       render :new
     end
@@ -29,7 +32,7 @@ class EventsController < ApplicationController
 
   def update
     if @event.update(event_params)
-      redirect_to @event, notice: 'Event was successfully updated.'
+      redirect_to @event, notice: I18n.t('controllers.events.updated')
     else
       render :edit
     end
@@ -37,7 +40,7 @@ class EventsController < ApplicationController
 
   def destroy
     @event.destroy
-    redirect_to events_url, notice: 'Event was successfully destroyed.'
+    redirect_to events_path, notice: I18n.t('controllers.events.destroyed')
   end
 
   private

@@ -1,0 +1,125 @@
+ru:
+  # Перевод моделей
+  activerecord:
+    errors:
+      models:
+        subscription:
+          attributes:
+            user_email:
+              email_present: 'уже занят'
+    # Перевод названия моделей
+    models:
+      user: 'Пользователь'
+      event: 'Событие'
+      photo: 'Фотография'
+      added: 'Добавил'
+
+    # Перевод атрибутов моделей
+    attributes:
+      user:
+        email: 'Email'
+        name: 'Имя'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
+        new_password: 'Ваш новый пароль'
+        password_warning: 'символов минимум'
+        password_lost: 'Забыли свой пароль?'
+        password_change: 'Изменить пароль'
+        instructions: 'Выслать инструкции по восстановлению пароля'
+        edit_password: 'Изменить пароль'
+        waiting_confirm: 'Ожидание подверждения:'
+        avatar: 'Аватар'
+      event:
+        title: 'Название'
+        address: 'Место проведения'
+        datetime: 'Дата и время'
+        description: 'Описание'
+      photo:
+        photo: 'Фотография'
+
+  controllers:
+    events:
+      created: 'Вы создали новое мероприятие'
+      updated: 'Вы обновили мероприятие'
+      destroyed: 'Вы удалили мероприятие :('
+    users:
+      updated: 'Вы обновили свой профиль'
+    comments:
+      destroyed: 'Комментарий удален'
+      created: 'Ваш комментарий добавлен'
+      error: 'Ошибка с комментарием'
+    subscriptions:
+      created: 'Вы подписаны на это событие'
+      destroyed: 'Участник отписан'
+      error: 'Подписка/отписка не сработала'
+    photos:
+      error: 'Что-то не так с фоткой'
+      created: 'Вы добавили фотографию к событию'
+      destroyed: 'Вы удалили фотку'
+
+  global:
+    error:
+      one: 'В вашей форме одна ошибка'
+      few: 'В вашей форме %{count} ошибки'
+      many: 'В вашей форме %{count} ошибок'
+    confirm:
+      question: 'Вы уверены, что хотите удалить это событие?'
+      account: 'Вы уверены, что хотите удалить аккаунт?'
+      warning: "При нажатии на 'Да' вы не сможете вернуть обратно данное событие"
+      yes: 'Да'
+      no: 'Отмена'
+    form:
+      save: 'Сохранить'
+      back: 'вернуться'
+      or: 'или'
+
+  pages:
+    events:
+      button:
+        edit: 'Изменить'
+        delete: 'Удалить'
+      title:
+        eddit: 'Редактирование события'
+        head: 'События'
+        create_events: 'Создать событие'
+        new: 'Новое событие'
+    layout:
+      button:
+        sign_in: 'Войти'
+        sign_up: 'Зарегистрироваться'
+        profile: 'Профиль'
+        sign_out: 'Выйти'
+        close: 'Закрыть'
+      static:
+        app_name: 'Шашлыки'
+        author: 'goodprogrammer.ru'
+    users:
+      edit_profile: 'Редактирование профиля'
+      save_edit: 'Редактировать профиль'
+      edit_password: 'Сменить пароль'
+      attention: 'Пользователь пока не организовал ни одного события'
+      user_events: 'Организовал:'
+      edit_user_password: 'Сменить пароль'
+      delete: 'Хотите удалить свой аккаунт?'
+      confirmation_delete: 'Удалить мой аккаунт'
+      email_present: 'уже занят, извините'
+
+
+  comments:
+    comment:
+      destroy_confirm: 'Вы уверены, что хотите удалить этот комментарий?'
+      form: 'Оставить комментарий'
+      name: 'Имя'
+
+
+  subscriptions:
+    subscription:
+      destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
+
+  events:
+    show: 'Пойдут:'
+    iready: 'Я пойду:'
+    organizer: 'Организовал:'
+    sub_blank: 'Пока никто не идет :-('
+
+

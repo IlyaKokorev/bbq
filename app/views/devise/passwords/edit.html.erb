@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class=".col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h2><%= t('pages.users.edit_password') %></h2>
+        </div>
+
+        <div class="card-body">
+          <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+            <%= f.hidden_field :reset_password_token %>
+
+            <div class="field">
+              <%= f.label :password, t('activerecord.attributes.user.new_password') %><br />
+              <% if @minimum_password_length %>
+                <em>(<%= @minimum_password_length %> <%= t('activerecord.attributes.user.password_warning') %>)</em><br />
+              <% end %>
+              <%= f.password_field :password, autofocus: true, class: 'form-control'%>
+            </div>
+
+            <div class="field">
+              <%= f.label :password_confirmation, t('activerecord.attributes.user.password_confirmation') %><br />
+              <%= f.password_field :password_confirmation, class: 'form-control' %>
+            </div>
+
+            <div class="actions">
+              <%= f.submit t('activerecord.attributes.user.password_change') %>
+            </div>
+          <% end %>
+
+          <%= render "devise/shared/links" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
