@@ -68,7 +68,7 @@
     </div>
   <% end %>
 
-  <% if @event.user.id != current_user&.id  %>
+  <% unless current_user_can_edit?(@event) || @event.subscribers.include?(current_user) %>
     <div class="event-subscription-form">
       <h4><%=t('events.iready')%></h4>
       <div>

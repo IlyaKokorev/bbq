@@ -1,6 +1,12 @@
 ru:
   # Перевод моделей
   activerecord:
+    errors:
+      models:
+        subscription:
+          attributes:
+            user_email:
+              email_present: 'уже занят'
     # Перевод названия моделей
     models:
       user: 'Пользователь'
@@ -97,7 +103,7 @@ ru:
       delete: 'Хотите удалить свой аккаунт?'
       confirmation_delete: 'Удалить мой аккаунт'
       email_present: 'уже занят, извините'
-      sub_error: 'Полегче, ты и так организатор этой вечеринки! ^_^'
+
 
   comments:
     comment:
@@ -115,3 +121,5 @@ ru:
     iready: 'Я пойду:'
     organizer: 'Организовал:'
     sub_blank: 'Пока никто не идет :-('
+
+

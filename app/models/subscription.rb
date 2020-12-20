@@ -18,35 +18,28 @@ class Subscription < ApplicationRecord
   validate :check_email_for_subs
   validate :subscribers_is_author?
 
-  def subscribers_is_author?
-    if event.user_id == user&.id
-      errors.add(:user, I18n.t('pages.users.sub_error'))
-    end
-  end
-
   # Если есть юзер, выдаем его имя,
   # если нет – дергаем исходный метод
   def user_name
-    if user.present?
-      user.name
-    else
-      super
-    end
+    user&.name.presence || super
   end
 
   # Если есть юзер, выдаем его email,
   # если нет – дергаем исходный метод
   def user_email
-    if user.present?
-      user.email
-    else
-      super
-    end
+    user&.email.presence || super
+  end
+
+  private
+
+  def subscribers_is_author?
+    errors.add(:user_email, :sub_error) if
+        event.user == user
   end
 
   def check_email_for_subs
-    if user_id.nil? && user_email.presence && User.find_by(email: user_email).presence
-      errors.add(:email, I18n.t('pages.users.email_present'))
-    end
+    errors.add(:user_email, :email_present) if
+        user_id.nil? && user_email.presence &&
+            User.find_by(email: user_email).present?
   end
 end
