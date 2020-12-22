@@ -21,6 +21,11 @@
     <%= f.text_area :description, class: 'form-control' %>
   </div>
 
+  <div class="form-group">
+    <%= f.label t('events.pincode') %>
+    <%= f.text_field :pincode, class: 'form-control' %>
+  </div>
+
   <div class="actions">
     <%= f.submit t('global.form.save'), class: 'btn btn-primary' %>
     <%= t('global.form.or') %> <%= link_to t('global.form.back'), :back %>
