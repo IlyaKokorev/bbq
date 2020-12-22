@@ -1,9 +1,8 @@
 require("@rails/ujs").start()
 require("@rails/activestorage").start()
 
-require("bootstrap")
+import "../scripts/map"
+import 'bootstrap/dist/js/bootstrap'
+const images = require.context('../images', true)
 
 import '../styles/application'
-import 'bootstrap/dist/js/bootstrap'
-
-const images = require.context('../images', true)
