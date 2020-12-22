@@ -33,13 +33,12 @@ class Subscription < ApplicationRecord
   private
 
   def subscribers_is_author?
-    errors.add(:user_email, :sub_error) if
-        event.user == user
+    errors.add(:user_email, :self_subscribe) if event.user == user
   end
 
   def check_email_for_subs
     errors.add(:user_email, :email_present) if
-        user_id.nil? && user_email.presence &&
-            User.find_by(email: user_email).present?
+      user_id.nil? && user_email.presence &&
+        User.find_by(email: user_email).present?
   end
 end

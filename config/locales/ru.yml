@@ -7,6 +7,8 @@ ru:
           attributes:
             user_email:
               email_present: 'уже занят'
+              self_subscribe: 'совпадает с Email автора этого события'
+
     # Перевод названия моделей
     models:
       user: 'Пользователь'
