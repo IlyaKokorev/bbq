@@ -16,7 +16,7 @@ class Subscription < ApplicationRecord
   # Или один email может использоваться только один раз (если анонимная подписка)
   validates :user_email, uniqueness: {scope: :event_id}, unless: -> { user.present? }
   validate :check_email_for_subs
-  validate :subscribers_is_author?
+  validate :subscribers_is_author?, unless: -> { user.present? }
 
   # Если есть юзер, выдаем его имя,
   # если нет – дергаем исходный метод
@@ -33,7 +33,7 @@ class Subscription < ApplicationRecord
   private
 
   def subscribers_is_author?
-    errors.add(:user_email, :self_subscribe) if event.user == user
+    errors.add(:user_email, :self_subscribe)
   end
 
   def check_email_for_subs
