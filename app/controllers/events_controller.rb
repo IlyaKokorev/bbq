@@ -46,19 +46,6 @@ class EventsController < ApplicationController
 
   private
 
-  def set_current_user_event
-    @event = current_user.events.find(params[:id])
-  end
-
-  def set_event
-    @event = Event.find(params[:id])
-  end
-
-    # Only allow a list of trusted parameters through.
-  def event_params
-    params.require(:event).permit(:title, :address, :datetime, :description, :pincode)
-  end
-
   def password_guard!
     # Если у события нет пин-кода, то охранять нечего
     return true if @event.pincode.blank?
@@ -80,5 +67,18 @@ class EventsController < ApplicationController
       end
       render 'password_form'
     end
+  end
+
+  def set_current_user_event
+    @event = current_user.events.find(params[:id])
+  end
+
+  def set_event
+    @event = Event.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def event_params
+    params.require(:event).permit(:title, :address, :datetime, :description, :pincode)
   end
 end
