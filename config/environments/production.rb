@@ -90,10 +90,17 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.default_url_options = {host: 'ilyabbq.herokuapp.com'}
+
+  # Ошибки рассылки юзеру не показываем
   config.action_mailer.raise_delivery_errors = false
+
+  # Делать рассылку писем (при false приложение только имитирует отправку)
   config.action_mailer.perform_deliveries = true
+
+  # Устанавливаем протокол, по которому отправлять (SMTP)
   config.action_mailer.delivery_method = :smtp
 
+  # А это для SendGrid
   ActionMailer::Base.smtp_settings = {
     :address        => 'smtp.sendgrid.net',
     :port           => '587',
