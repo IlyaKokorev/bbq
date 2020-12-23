@@ -18,16 +18,8 @@ function init(){
       myMap.geoObjects.add(
         new ymaps.Placemark(
           coordinates,
-          {
-            iconContent: address,
-            hintContent: address,
-
-          },
-          {
-            iconLayout: 'default#image',
-            iconImageHref: '../map_icon.png',
-            iconImageSize: [20, 20]
-          }
+          {iconContent: address},
+          {preset: 'islands#blueStretchyIcon'}
         )
       );
 
