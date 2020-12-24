@@ -1,6 +1,5 @@
 require("@rails/ujs").start()
 require("@rails/activestorage").start()
-require("jquery")
 
 // я нашел этот метод на https://masterpro.ws/jquery-bootstrap-ruby-on-rails-6
 // но я не помню, чтобы мы его раньше применяли. Вроде установил jquery правильно,
