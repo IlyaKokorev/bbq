@@ -17,6 +17,7 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'fog-aws'
 gem 'sass-rails'
+gem 'jquery-rails'
 
 group :production do
   gem 'pg'

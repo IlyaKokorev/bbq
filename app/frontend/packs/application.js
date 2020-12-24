@@ -1,10 +1,14 @@
 require("@rails/ujs").start()
 require("@rails/activestorage").start()
+require("jquery")
 
-var jQuery = require('jquery')
+// я нашел этот метод на https://masterpro.ws/jquery-bootstrap-ruby-on-rails-6
+// но я не помню, чтобы мы его раньше применяли. Вроде установил jquery правильно,
+// yarn и все дела, но вот эта штука снизу (как я понял, объявление переменных)
+// немного сводит меня с ума. Похоже на костыль.
 
-// include jQuery in global and window scope (so you can access it globally)
-// in your web browser, when you type $('.div'), it is actually refering to global.$('.div')
+var jQuery = require("jquery");
+// import jQuery from "jquery";
 global.$ = global.jQuery = jQuery;
 window.$ = window.jQuery = jQuery;
 
