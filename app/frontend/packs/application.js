@@ -16,5 +16,4 @@ import 'bootstrap/dist/js/bootstrap'
 import '../scripts/map'
 import '../scripts/box'
 
-
 const images = require.context('../images', true)
