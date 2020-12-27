@@ -14,7 +14,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '1bcdc369d0b6d6ac81d05f9413e1051d3f0d3524add442733bec2e1ea500d2071c6f609057c3e48b77416924a123c25c71a252fc5875292ac9c0e55f55d35714'
+  # config.secret_key = '7fe819bb0c2ef8eda3e7d249852ccc58267ea605b6f6a9b5d3fec487da049e2aa20f9231063950aad28abf28bab7baceff452e82925790bcff22de2e2f62d112'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -24,7 +24,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = 'kockorev.ilya@gmail.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -126,7 +126,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '1e29cab4c251259cc7446c7350d4b8a8ec5c8959815dab3e83d5e419c22532614333183760264b2a345a12afdcd7a98ebe47c6896ef46c69dff41b27a9e14e03'
+  # config.pepper = '835ffac9557f353087a8b2db2254a74fc2621909619b84b5f85493c149ec1b0c399fa1266ed9d35b66602b34bdea8171a25bc45edf9f12b99e634735008b4518'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -244,7 +244,7 @@ Devise.setup do |config|
   # Turn scoped views on. Before rendering "sessions/new", it will first check for
   # "users/sessions/new". It's turned off by default because it's slower if you
   # are using only default views.
-  config.scoped_views = true
+  # config.scoped_views = false
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).
@@ -308,4 +308,10 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
+  #
+  #ActionMailer::Base.default_url_options = { :host => "localhost:3000" }
+
+  #ActionMailer::Base.default_url_options =  { host: 'ilyabbq.herokuapp.com' }
+  #config.action_mailer.default_url_options = { host: 'ilyabbq.herokuapp.com' }
+  #config.action_mailer.default_url_options = { host: => 'localhost:3000' }
 end
