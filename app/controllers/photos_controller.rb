@@ -48,7 +48,7 @@ class PhotosController < ApplicationController
 
   # Получаем фотографию из базы стандартным методом find
   def set_photo
-    @photo = @event.photos.find(params[:id])
+    @photo = @event.photo.find(params[:id])
   end
 
   # При создании новой фотографии мы получаем массив параметров photo
