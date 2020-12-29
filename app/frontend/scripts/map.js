@@ -3,12 +3,10 @@ var myMap;
 
 function init() {
 
-  if ($('body').is("map")) {
-    // Блок существует
-    // ВАША ФУНКЦИЯ
+  if ($('body').hasClass('map')) {
     address = document.getElementById('map').getAttribute('data-address');
 
-    myMap = new ymaps.Map("map", {
+    myMap = new ymaps.Map('map', {
       center: [55.76, 37.64],
       zoom: 10
     });
@@ -33,9 +31,6 @@ function init() {
         alert('Ошибка при определении местоположения');
       }
     );
-  } else {
-    // Блок НЕ существует
-    // ВАША ФУНКЦИЯ
   }
 }
 
