@@ -19,6 +19,6 @@ class EventMailer < ApplicationMailer
     @event = event
     @photo = photo
 
-    mail to: email, subject: "Добавлено новое фото"
+    mail to: email, subject: "Добавлено новое фото #{event.title}"
   end
 end
