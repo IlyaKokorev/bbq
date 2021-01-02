@@ -3,9 +3,9 @@ var myMap;
 
 function init() {
 
-  if ($('body').is("map")) {
+/*  if ($('body').is("map")) {
     // Блок существует
-    // ВАША ФУНКЦИЯ
+    // ВАША ФУНКЦИЯ*/
     address = document.getElementById('map').getAttribute('data-address');
 
     myMap = new ymaps.Map("map", {
@@ -33,10 +33,10 @@ function init() {
         alert('Ошибка при определении местоположения');
       }
     );
-  } else {
+/*  } else {
     // Блок НЕ существует
     // ВАША ФУНКЦИЯ
-  }
+  }*/
 }
 
 
