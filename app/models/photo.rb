@@ -3,6 +3,7 @@ class Photo < ApplicationRecord
   belongs_to :user
 
   validates :event, :user, presence: true
+  validates :photo, presence: true
 
   mount_uploader :photo, PhotoUploader
 
