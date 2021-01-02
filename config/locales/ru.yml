@@ -3,6 +3,10 @@ ru:
   activerecord:
     errors:
       models:
+        photo:
+          attributes:
+            user:
+              required: 'Вы должны приложить фото!'
         subscription:
           attributes:
             user_email:
@@ -59,6 +63,7 @@ ru:
       error: 'Что-то не так с фоткой'
       created: 'Вы добавили фотографию к событию'
       destroyed: 'Вы удалили фотку'
+      added: 'Добавил:'
 
   global:
     error:
