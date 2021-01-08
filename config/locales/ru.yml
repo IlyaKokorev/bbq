@@ -7,6 +7,7 @@ ru:
           attributes:
             user:
               required: 'Вы должны приложить фото!'
+
         subscription:
           attributes:
             user_email:
@@ -119,7 +120,6 @@ ru:
       form: 'Оставить комментарий'
       name: 'Имя'
 
-
   subscriptions:
     subscription:
       destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
@@ -129,7 +129,7 @@ ru:
       title: 'Новый комментарий'
       author: 'Автор'
       event: 'Событие'
-      datetime: 'Состоится'
+      datetime: 'Дата:'
       owner: 'Организатор'
     subscription:
       title: 'Новая подписка'

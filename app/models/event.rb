@@ -5,7 +5,7 @@ class Event < ApplicationRecord
   has_many :comments, dependent: :delete_all
   has_many :subscriptions, dependent: :delete_all
   has_many :subscribers, through: :subscriptions, source: :user
-  has_many :photo
+  has_many :photo, dependent: :delete_all
 
   # Валидируем юзера на присутствие. В Rails 5 связи
   # валидируются по умолчанию
