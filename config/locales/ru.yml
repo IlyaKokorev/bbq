@@ -42,7 +42,7 @@ ru:
         datetime: 'Дата и время'
         description: 'Описание'
       photo:
-        photo: 'Фотография'
+        photo: 'Файл'
 
   controllers:
     events:
