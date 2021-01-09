@@ -59,6 +59,13 @@ module ApplicationHelper
     content_tag 'span', '', class: "fa fa-#{icon_class}"
   end
 
+  def delete_photo?(event, photo)
+    if current_user_can_edit?(event)
+      link_to fa_icon("trash-alt"), event_photo_path(@event, photo),
+              method: :delete, data: {confirm: t('controllers.photos.destroy')}
+    end
+  end
+
   private
   def bootstrap_class_for(flash_type)
     { success: "alert-success", error: "alert-danger", alert: "alert-warning", notice: "alert-success" }.stringify_keys[flash_type.to_s] || flash_type.to_s

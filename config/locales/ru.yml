@@ -65,6 +65,8 @@ ru:
       created: 'Вы добавили фотографию к событию'
       destroyed: 'Вы удалили фотку'
       added: 'Добавил:'
+      destroy: 'Удалить фото?'
+
 
   global:
     error:
