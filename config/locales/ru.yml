@@ -43,6 +43,9 @@ ru:
         description: 'Описание'
       photo:
         photo: 'Файл'
+      comment:
+        user_name: 'Имя'
+        body: 'Комментарий'
 
   controllers:
     events:
@@ -157,3 +160,4 @@ ru:
     pincode: 'Пин-код доступа'
     home: 'На главную'
     title: 'Доступ только по пин коду'
+    save: 'Отправить'
