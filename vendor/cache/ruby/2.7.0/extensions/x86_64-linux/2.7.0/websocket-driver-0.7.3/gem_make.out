@@ -1,0 +1,15 @@
+current directory: /home/ilya/rortut/bbq/vendor/cache/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+/home/ilya/.rvm/rubies/ruby-2.7.0/bin/ruby -I /home/ilya/.rvm/rubies/ruby-2.7.0/lib/ruby/site_ruby/2.7.0 -r ./siteconf20210118-97523-3eu2wf.rb extconf.rb
+creating Makefile
+
+current directory: /home/ilya/rortut/bbq/vendor/cache/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /home/ilya/rortut/bbq/vendor/cache/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.so
+
+current directory: /home/ilya/rortut/bbq/vendor/cache/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -m 0755 websocket_mask.so ./.gem.20210118-97523-lzd98g
