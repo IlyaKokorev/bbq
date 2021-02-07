@@ -44,4 +44,4 @@ public/uploads
 
 config/secrets.yml
 config/database.yml
-app/.env
+.env
