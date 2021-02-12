@@ -41,3 +41,7 @@ yarn-debug.log*
 .yarn-integrity
 .idea
 public/uploads
+
+config/secrets.yml
+config/database.yml
+.env

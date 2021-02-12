@@ -24,8 +24,8 @@
               <%= f.password_field :password_confirmation, class: 'form-control' %>
             </div>
 
-            <div class="actions">
-              <%= f.submit t('activerecord.attributes.user.password_change') %>
+            <div class="actions buffer-top">
+              <%= f.submit t('activerecord.attributes.user.password_change'), class: 'btn btn-outline-warning buffer-top btn-block' %>
             </div>
           <% end %>
 

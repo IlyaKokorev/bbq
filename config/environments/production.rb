@@ -3,7 +3,7 @@ Rails.application.configure do
 
   # Code is not reloaded between requests.
   config.cache_classes = true
-
+  config.require_master_key = true
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.
@@ -136,7 +136,7 @@ Rails.application.configure do
 
   # Базовый URL сайта для правильных ссылок в письмах
   # ПРОПИСЫВАЙТЕ свой!
-  config.action_mailer.default_url_options = {host: 'ilyabbq.herokuapp.com'}
+  config.action_mailer.default_url_options = {host: 'neverends.site'}
 
   # Ошибки рассылки юзеру не показываем
   config.action_mailer.raise_delivery_errors = false
@@ -154,7 +154,7 @@ Rails.application.configure do
     :authentication => :plain,
     :user_name      => ENV['SENDGRID_USERNAME'],
     :password       => ENV['SENDGRID_PASSWORD'],
-    :domain         => 'heroku.com',
+    :domain         => 'neverends.site',
     :enable_starttls_auto => true
   }
 end

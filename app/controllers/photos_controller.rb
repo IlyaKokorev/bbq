@@ -2,6 +2,7 @@ class PhotosController < ApplicationController
   before_action :set_event, only: [:create, :destroy]
   before_action :set_photo, only: [:destroy]
 
+
   # Обратите внимание: фотку может сейчас добавить даже неавторизованный пользовать
   # Смотрите домашки!
   def create
@@ -12,7 +13,7 @@ class PhotosController < ApplicationController
     @new_photo.user = current_user
 
     if @new_photo.save
-      photo_subscribers(@event, @new_photo)
+      send_photo_email(@event, @new_photo)
       # Если фотка сохранилась, редиректим на событие с сообщением
       redirect_to @event, notice: t('controllers.photos.created')
     else
@@ -39,6 +40,14 @@ class PhotosController < ApplicationController
 
   private
 
+  def send_photo_email(event, photo)
+    all_emails = (event.subscriptions.map(&:user_email) + [event.user.email] - [photo.user&.email]).uniq
+
+    all_emails.each do |email|
+      EventMailer.photo(event, photo, email).deliver_now
+    end
+  end
+
   # Так как фотография — вложенный ресурс, в params[:event_id] рельсы
   # автоматически положат id события, которому принадлежит фотография
   # Это событие будет лежать в переменной контроллера @event
@@ -55,13 +64,5 @@ class PhotosController < ApplicationController
   # c единственным полем photo
   def photo_params
     params.fetch(:photo, {}).permit(:photo)
-  end
-
-  def photo_subscribers(event, photo)
-    all_emails = (event.subscriptions.map(&:user_email) + [event.user.email] - [photo.user.email]).uniq
-
-    all_emails.each do |mail|
-      EventMailer.photo(event, photo, mail).deliver_now
-    end
   end
 end
