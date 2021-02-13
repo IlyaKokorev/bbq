@@ -5,6 +5,7 @@ set :application, "neverends"
 set :repo_url, "git@github.com:IlyaKokorev/bbq.git"
 set :deploy_to, "/home/deploy/apps/neverends"
 
+set :branch, $1 if `git branch` =~ /\* (\S+)\s/m
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -40,6 +41,6 @@ set :deploy_to, "/home/deploy/apps/neverends"
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
 
-append :linked_files, 'config/database.yml', 'config/secrets.yml', '.env'
+append :linked_files, 'config/database.yml', 'config/secrets.yml', '.env', 'config/master.key'
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads'
 
