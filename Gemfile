@@ -32,7 +32,7 @@ group :development, :test do
   gem 'listen', '~> 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'capistrano', '~> 3.11.0'
+  gem 'capistrano', '~> 3.15.0'
   gem 'capistrano-rails', '~> 1.3.0'
   gem 'capistrano-passenger', '~> 0.2'
   gem 'capistrano-rbenv', '~> 2.1'
