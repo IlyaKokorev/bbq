@@ -11,6 +11,7 @@ gem 'uglifier', '~> 4.2'
 
 gem 'devise'
 gem 'devise-i18n'
+gem 'pundit', '~> 2.1'
 gem 'russian'
 gem 'byebug'
 gem 'bootsnap', require: false
