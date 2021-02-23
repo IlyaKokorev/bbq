@@ -20,7 +20,7 @@ gem 'rmagick'
 gem 'fog-aws'
 gem 'sass-rails'
 gem 'jquery-rails'
-
+gem 'web-console', '>= 3.3.0', group: :development
 
 group :production do
   gem 'pg'
@@ -39,6 +39,9 @@ group :development, :test do
   gem 'capistrano-rbenv', '~> 2.1'
   gem 'capistrano-bundler', '~> 1.4.0'
   gem 'capistrano-resque', '~> 0.2.3', require: false
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'shoulda-matchers'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
