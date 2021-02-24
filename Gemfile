@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.0'
 
 gem 'dotenv-rails', require: 'dotenv/rails-now'
-gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
+gem 'rails', '>= 6.0.3'
 gem 'puma', '~> 4.1'
 gem 'webpacker', '~> 4.0'
 gem 'uglifier', '~> 4.2'
@@ -43,6 +43,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'shoulda-matchers'
+
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
