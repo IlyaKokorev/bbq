@@ -29,6 +29,5 @@ RSpec.describe EventPolicy, type: :policy do
       it { is_expected.to permit(user2, Event) } # может создать своё
       it { is_expected.not_to permit(nil, Event) } # но только если залогинен
     end
-
   end
 end
