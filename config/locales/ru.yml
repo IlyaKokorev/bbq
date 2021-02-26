@@ -167,3 +167,6 @@ ru:
 
   pundit:
     not_authorized: 'Вам нельзя это делать!'
+
+  links:
+    sign_in_with: "Войти с помощью %{provider}"
