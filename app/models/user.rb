@@ -29,15 +29,8 @@ class User < ApplicationRecord
     # Если не нашёлся, достаём провайдера, айдишник и урл
     provider = access_token.provider
     id = access_token.extra.raw_info.id
-
-    case provider
-    # when 'facebook'
-    #   url = "https://facebook.com/#{id}"
-    #   avatar = access_token.info.image.gsub('http', 'https')
-    when 'vkontakte'
-      url = "https://vk.com/#{id}"
-      avatar = access_token.extra.raw_info.photo_200
-    end
+    url = "https://vk.com/#{id}"
+    avatar = access_token.extra.raw_info.photo_200
 
     # Теперь ищем в базе запись по провайдеру и урлу
     # Если есть, то вернётся, если нет, то будет создана новая
