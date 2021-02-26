@@ -17,8 +17,6 @@ class User < ApplicationRecord
 
   mount_uploader :avatar, AvatarUploader
 
-  private
-
   def self.find_for_oauth(access_token)
     # Достаём email из токена
     name = access_token.info.name
@@ -51,6 +49,8 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token.first(16)
     end
   end
+
+  private
 
   def set_name
     self.name = "Юзер №#{rand(777)}" if self.name.blank?
