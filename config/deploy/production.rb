@@ -1,6 +1,11 @@
 # server-based syntax
 
-server 'neverends.site', user: 'deploy', roles: %w{app db web}
+server 'neverends.site', user: 'deploy', roles: %w[app db web resque_worker]
+
+# При запуске воркера загружать Rails приложение
+set :resque_environment_task, true
+# Будет запущен один воркер, обслуживающий очереди с именем "neverends*"
+set :workers, { "#{fetch(:application)}*" => 1 }
 
 # ======================
 # Defines a single server with a list of roles and multiple properties.

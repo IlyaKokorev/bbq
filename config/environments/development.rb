@@ -59,7 +59,7 @@ Rails.application.configure do
 
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
 
 =begin
   config.action_mailer.delivery_method = :smtp
@@ -74,4 +74,7 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :letter_opener
   config.action_mailer.perform_deliveries = true
+
+  config.active_job.queue_adapter = :inline
+  config.active_job.queue_name_prefix = "bbq_#{Rails.env}"
 end

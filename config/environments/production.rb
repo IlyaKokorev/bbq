@@ -48,7 +48,7 @@ Rails.application.configure do
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
-  config.log_level = :debug
+  config.log_level = :warn
 
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
@@ -157,4 +157,7 @@ Rails.application.configure do
     :domain         => 'neverends.site',
     :enable_starttls_auto => true
   }
+
+  config.active_job.queue_adapter = :resque
+  config.active_job.queue_name_prefix = "neverends_#{Rails.env}"
 end
