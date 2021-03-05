@@ -14,7 +14,7 @@ class MailDeliveryJob < ApplicationJob
     elsif class_object.is_a?(Photo)
       all_emails.each { |mail| EventMailer.photo(event, class_object, mail).deliver_later }
     else class_object.is_a?(Subscription)
-    EventMailer.subscription(event, class_object).deliver_later
+      EventMailer.subscription(event, class_object).deliver_later
     end
   end
 end
