@@ -1,8 +1,4 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-  # def facebook
-  #   omniauth
-  # end
-
   def vkontakte
     omniauth
   end

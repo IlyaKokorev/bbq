@@ -7,8 +7,6 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :subscriptions, dependent: :destroy
 
-  # Добавим заодно валидации для юзера
-  # Имя не не более 35 символов
   validates :name, presence: true, length: {maximum: 35}
 
   before_validation :set_name, on: :create
