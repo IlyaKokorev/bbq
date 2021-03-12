@@ -57,7 +57,7 @@
 
 И пропишите свои переменные окружения
 
-И на последок Вы должны сгенерировать master.key и credentials.yml.enc. Для этого просто выполните команду:
+И на последок, Вы должны сгенерировать master.key и credentials.yml.enc. Для этого просто выполните команду:
 
 ```run EDITOR=vim rails credentials:edit```
 
