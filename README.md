@@ -30,12 +30,14 @@
 
 ## Установка и запуск
 
-* `git clone git@github.com:IlyaKokorev/bbq.git`
-* `bundle install`
-* `bundle exec rake db:migrate`
-* `yarn`
-* `bundle exec rails s`
-* `http://localhost:3000/`
+```
+git clone git@github.com:IlyaKokorev/bbq.git
+bundle install
+bundle exec rake db:migrate
+yarn
+bundle exec rails s
+http://localhost:3000/
+```
 
 ---
 
@@ -43,9 +45,10 @@
 
 Переименуйте их командой 
 
-```cp config/database.example.yml config/database.yml``` 
-
-```cp config/secrets.example.yml config/secrets.yml```
+```
+cp config/database.example.yml config/database.yml 
+cp config/secrets.example.yml config/secrets.yml
+```
 
 И заполните своими переменными.
 
@@ -53,12 +56,16 @@
 
 Для этого выполните команду: 
 
-```cp .env.example .env```
+```
+cp .env.example .env
+```
 
 И пропишите свои переменные окружения
 
 И на последок, Вы должны сгенерировать master.key и credentials.yml.enc. Для этого просто выполните команду:
 
-```run EDITOR=vim rails credentials:edit```
+```
+run EDITOR=vim rails credentials:edit
+```
 
 (В качестве редактора вы можете использовать что-то другое, например atom или nano)
