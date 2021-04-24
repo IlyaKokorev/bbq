@@ -34,8 +34,6 @@ class Subscription < ApplicationRecord
   end
 
   def subscribers_is_author?
-    if event.user == user
-      errors.add(:user_email, :self_subscribe)
-    end
+    errors.add(:user_email, :self_subscribe) if event.user == user
   end
 end
