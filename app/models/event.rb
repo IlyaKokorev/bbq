@@ -7,7 +7,7 @@ class Event < ApplicationRecord
   has_many :photo, dependent: :delete_all
 
   validates :user, presence: true
-  validates :title, presence: true, length: {maximum: 255}
+  validates :title, presence: true, length: { maximum: 255 }
   validates :address, presence: true
   validates :datetime, presence: true
 

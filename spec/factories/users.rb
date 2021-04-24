@@ -3,12 +3,12 @@ FactoryBot.define do
   factory :user do
 
     # Генерируем тестовых юзеров
-    sequence(:name) { |n| "user_№#{n}"}
+    sequence(:name) { |n| "user_№#{n}" }
 
     # Задаем мыло
-    email { "#{name.downcase}@example.com"}
+    email { "#{name.downcase}@example.com" }
 
     # Задаем пароль
-    after(:build) { |u| u.password_confirmation = u.password = "123123"}
+    after(:build) { |u| u.password_confirmation = u.password = "123123" }
   end
 end

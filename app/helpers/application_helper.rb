@@ -49,9 +49,7 @@ module ApplicationHelper
   end
 
   def minimum_password_length
-    if @minimum_password_length
-      "Password #{@minimum_password_length} characters minimum"
-    end
+    "Password #{@minimum_password_length} characters minimum" if @minimum_password_length
   end
 
   def fa_icon(icon_class)
@@ -61,7 +59,7 @@ module ApplicationHelper
   def delete_photo?(event, photo)
     if current_user_can_edit?(event)
       link_to fa_icon("trash-alt"), event_photo_path(@event, photo),
-              method: :delete, data: {confirm: t('controllers.photos.destroy')}
+              method: :delete, data: { confirm: t('controllers.photos.destroy') }
     end
   end
 
